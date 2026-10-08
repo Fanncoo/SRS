@@ -1,0 +1,853 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Культурно-оздоровительный комплекс</title>
+
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: Arial, sans-serif;
+            color: #1f2937;
+            background: #f5f8f6;
+        }
+
+        /* HEADER */
+
+        header {
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            background: white;
+            box-shadow: 0 2px 15px rgba(0,0,0,.08);
+        }
+
+        .header {
+            max-width: 1200px;
+            margin: auto;
+            padding: 18px 25px;
+
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+        }
+
+        .logo {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+
+            font-size: 20px;
+            font-weight: 800;
+            color: #087f5b;
+        }
+
+        .logo-icon {
+            width: 45px;
+            height: 45px;
+            border-radius: 12px;
+
+            background: #087f5b;
+            color: white;
+
+            display: flex;
+            align-items: center;
+            justify-content: center;
+
+            font-size: 22px;
+        }
+
+        nav {
+            display: flex;
+            gap: 28px;
+        }
+
+        nav a {
+            color: #374151;
+            text-decoration: none;
+            font-weight: 600;
+            transition: .3s;
+        }
+
+        nav a:hover {
+            color: #087f5b;
+        }
+
+        .header-button {
+            background: #087f5b;
+            color: white;
+            padding: 12px 22px;
+            border-radius: 8px;
+            text-decoration: none;
+            font-weight: 600;
+        }
+
+        /* HERO */
+
+        .hero {
+            min-height: 650px;
+
+            background:
+                linear-gradient(
+                    rgba(4, 78, 59, .78),
+                    rgba(5, 96, 71, .72)
+                ),
+                url("https://images.unsplash.com/photo-1540497077202-7c8a3999166f?auto=format&fit=crop&w=1800&q=80");
+
+            background-size: cover;
+            background-position: center;
+
+            display: flex;
+            align-items: center;
+        }
+
+        .hero-content {
+            max-width: 1200px;
+            width: 100%;
+            margin: auto;
+            padding: 80px 25px;
+            color: white;
+        }
+
+        .hero-label {
+            display: inline-block;
+            padding: 8px 16px;
+            border-radius: 30px;
+
+            background: rgba(255,255,255,.15);
+            border: 1px solid rgba(255,255,255,.3);
+
+            margin-bottom: 22px;
+        }
+
+        .hero h1 {
+            max-width: 800px;
+            font-size: 58px;
+            line-height: 1.1;
+            margin-bottom: 25px;
+        }
+
+        .hero p {
+            max-width: 650px;
+            font-size: 19px;
+            line-height: 1.7;
+            color: #e5f5ef;
+            margin-bottom: 35px;
+        }
+
+        .hero-buttons {
+            display: flex;
+            gap: 15px;
+            flex-wrap: wrap;
+        }
+
+        .btn-primary {
+            display: inline-block;
+            padding: 15px 28px;
+            border-radius: 9px;
+
+            background: #fbbf24;
+            color: #172018;
+
+            text-decoration: none;
+            font-weight: 700;
+
+            transition: .3s;
+        }
+
+        .btn-primary:hover {
+            transform: translateY(-3px);
+            background: #f59e0b;
+        }
+
+        .btn-secondary {
+            display: inline-block;
+            padding: 15px 28px;
+            border-radius: 9px;
+
+            border: 1px solid rgba(255,255,255,.6);
+            color: white;
+
+            text-decoration: none;
+            font-weight: 700;
+        }
+
+        /* SECTION */
+
+        .section {
+            max-width: 1200px;
+            margin: auto;
+            padding: 90px 25px;
+        }
+
+        .section-title {
+            text-align: center;
+            margin-bottom: 50px;
+        }
+
+        .section-title span {
+            color: #087f5b;
+            font-weight: 700;
+            text-transform: uppercase;
+            font-size: 13px;
+            letter-spacing: 1px;
+        }
+
+        .section-title h2 {
+            font-size: 38px;
+            margin-top: 10px;
+        }
+
+        .section-title p {
+            max-width: 650px;
+            margin: 15px auto 0;
+            color: #6b7280;
+            line-height: 1.6;
+        }
+
+        /* ABOUT */
+
+        .about {
+            background: white;
+        }
+
+        .about-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 50px;
+            align-items: center;
+        }
+
+        .about-image {
+            height: 420px;
+            border-radius: 25px;
+
+            background:
+                url("https://images.unsplash.com/photo-1517836357463-d25dfeac3438?auto=format&fit=crop&w=1000&q=80");
+
+            background-size: cover;
+            background-position: center;
+        }
+
+        .about-text h3 {
+            font-size: 30px;
+            margin-bottom: 20px;
+        }
+
+        .about-text p {
+            color: #6b7280;
+            line-height: 1.8;
+            margin-bottom: 20px;
+        }
+
+        .features {
+            list-style: none;
+        }
+
+        .features li {
+            margin: 15px 0;
+            font-weight: 600;
+        }
+
+        .features li::before {
+            content: "✓";
+            color: #087f5b;
+            font-weight: bold;
+            margin-right: 10px;
+        }
+
+        /* SERVICES */
+
+        .services {
+            background: #f5f8f6;
+        }
+
+        .cards {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 22px;
+        }
+
+        .card {
+            background: white;
+            padding: 30px 24px;
+            border-radius: 18px;
+
+            box-shadow: 0 8px 25px rgba(0,0,0,.05);
+
+            transition: .3s;
+        }
+
+        .card:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 15px 35px rgba(0,0,0,.1);
+        }
+
+        .card-icon {
+            width: 58px;
+            height: 58px;
+            border-radius: 15px;
+
+            background: #dff5ec;
+            color: #087f5b;
+
+            display: flex;
+            align-items: center;
+            justify-content: center;
+
+            font-size: 26px;
+            margin-bottom: 20px;
+        }
+
+        .card h3 {
+            font-size: 20px;
+            margin-bottom: 12px;
+        }
+
+        .card p {
+            color: #6b7280;
+            line-height: 1.6;
+            font-size: 15px;
+        }
+
+        /* ADVANTAGES */
+
+        .advantages {
+            background: white;
+        }
+
+        .advantages-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 25px;
+        }
+
+        .advantage {
+            text-align: center;
+            padding: 35px 25px;
+        }
+
+        .advantage-number {
+            font-size: 45px;
+            font-weight: 800;
+            color: #087f5b;
+            margin-bottom: 10px;
+        }
+
+        .advantage h3 {
+            margin-bottom: 10px;
+        }
+
+        .advantage p {
+            color: #6b7280;
+            line-height: 1.6;
+        }
+
+        /* CTA */
+
+        .cta {
+            max-width: 1150px;
+            margin: 70px auto;
+            padding: 70px 30px;
+
+            border-radius: 28px;
+
+            background:
+                linear-gradient(
+                    120deg,
+                    #087f5b,
+                    #0b6b50
+                );
+
+            text-align: center;
+            color: white;
+        }
+
+        .cta h2 {
+            font-size: 38px;
+            margin-bottom: 15px;
+        }
+
+        .cta p {
+            color: #d8f3e8;
+            margin-bottom: 30px;
+        }
+
+        /* FOOTER */
+
+        footer {
+            background: #10231d;
+            color: white;
+            padding: 45px 25px;
+        }
+
+        .footer {
+            max-width: 1200px;
+            margin: auto;
+
+            display: flex;
+            justify-content: space-between;
+            gap: 30px;
+        }
+
+        .footer h3 {
+            margin-bottom: 12px;
+        }
+
+        .footer p {
+            color: #9ca3af;
+            line-height: 1.6;
+        }
+
+        .footer-links {
+            display: flex;
+            gap: 20px;
+        }
+
+        .footer-links a {
+            color: #d1d5db;
+            text-decoration: none;
+        }
+
+        .copyright {
+            max-width: 1200px;
+            margin: 35px auto 0;
+            padding-top: 25px;
+            border-top: 1px solid #263c34;
+
+            color: #6b7280;
+            font-size: 14px;
+        }
+
+        /* MOBILE */
+
+        @media (max-width: 900px) {
+
+            nav {
+                display: none;
+            }
+
+            .hero h1 {
+                font-size: 45px;
+            }
+
+            .cards {
+                grid-template-columns: repeat(2, 1fr);
+            }
+
+            .about-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .advantages-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .about-image {
+                height: 320px;
+            }
+        }
+
+        @media (max-width: 600px) {
+
+            .header-button {
+                display: none;
+            }
+
+            .hero {
+                min-height: 600px;
+            }
+
+            .hero-content {
+                padding: 60px 20px;
+            }
+
+            .hero h1 {
+                font-size: 37px;
+            }
+
+            .hero p {
+                font-size: 16px;
+            }
+
+            .section {
+                padding: 65px 20px;
+            }
+
+            .section-title h2 {
+                font-size: 30px;
+            }
+
+            .cards {
+                grid-template-columns: 1fr;
+            }
+
+            .cta {
+                margin: 40px 15px;
+                padding: 50px 20px;
+            }
+
+            .cta h2 {
+                font-size: 30px;
+            }
+
+            .footer {
+                flex-direction: column;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+<!-- HEADER -->
+
+<header>
+    <div class="header">
+
+        <div class="logo">
+            <div class="logo-icon">КО</div>
+            Культурно-оздоровительный комплекс
+        </div>
+
+        <nav>
+            <a href="#home">Главная</a>
+            <a href="#about">О комплексе</a>
+            <a href="#services">Услуги</a>
+            <a href="#advantages">Преимущества</a>
+            <a href="#contacts">Контакты</a>
+        </nav>
+
+        <a href="#contacts" class="header-button">
+            Связаться
+        </a>
+
+    </div>
+</header>
+
+
+<!-- HERO -->
+
+<section class="hero" id="home">
+
+    <div class="hero-content">
+
+        <div class="hero-label">
+            Добро пожаловать
+        </div>
+
+        <h1>
+            Пространство для здоровья, культуры и отдыха
+        </h1>
+
+        <p>
+            Культурно-оздоровительный комплекс — это место,
+            где спорт, здоровье, культура и активный отдых
+            объединяются для всей семьи.
+        </p>
+
+        <div class="hero-buttons">
+
+            <a href="#services" class="btn-primary">
+                Наши услуги
+            </a>
+
+            <a href="#about" class="btn-secondary">
+                Узнать о комплексе
+            </a>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- ABOUT -->
+
+<section class="about" id="about">
+
+    <div class="section">
+
+        <div class="about-grid">
+
+            <div class="about-image"></div>
+
+            <div class="about-text">
+
+                <div class="section-title" style="text-align:left; margin-bottom:25px;">
+                    <span>О комплексе</span>
+                    <h2>Всё для активной и здоровой жизни</h2>
+                </div>
+
+                <p>
+                    Наш культурно-оздоровительный комплекс создан
+                    для комфортного отдыха, физического развития
+                    и культурного досуга людей разных возрастов.
+                </p>
+
+                <p>
+                    Здесь можно заниматься спортом, посещать
+                    культурные мероприятия, проводить свободное
+                    время с семьёй и заботиться о своём здоровье.
+                </p>
+
+                <ul class="features">
+                    <li>Современная инфраструктура</li>
+                    <li>Спортивные и оздоровительные программы</li>
+                    <li>Культурные мероприятия</li>
+                    <li>Отдых для всей семьи</li>
+                </ul>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- SERVICES -->
+
+<section class="services" id="services">
+
+    <div class="section">
+
+        <div class="section-title">
+
+            <span>Наши направления</span>
+
+            <h2>
+                Чем можно заниматься?
+            </h2>
+
+            <p>
+                Выбирайте подходящее направление
+                и проводите время с пользой.
+            </p>
+
+        </div>
+
+
+        <div class="cards">
+
+            <div class="card">
+
+                <div class="card-icon">🏋️</div>
+
+                <h3>
+                    Спорт
+                </h3>
+
+                <p>
+                    Тренажёрный зал, спортивные занятия
+                    и активный образ жизни.
+                </p>
+
+            </div>
+
+
+            <div class="card">
+
+                <div class="card-icon">🧘</div>
+
+                <h3>
+                    Оздоровление
+                </h3>
+
+                <p>
+                    Программы для укрепления здоровья,
+                    восстановления и отдыха.
+                </p>
+
+            </div>
+
+
+            <div class="card">
+
+                <div class="card-icon">🎭</div>
+
+                <h3>
+                    Культура
+                </h3>
+
+                <p>
+                    Концерты, выставки, творческие мероприятия
+                    и культурные программы.
+                </p>
+
+            </div>
+
+
+            <div class="card">
+
+                <div class="card-icon">👨‍👩‍👧‍👦</div>
+
+                <h3>
+                    Семейный отдых
+                </h3>
+
+                <p>
+                    Комфортное пространство для отдыха
+                    детей, родителей и всей семьи.
+                </p>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- ADVANTAGES -->
+
+<section class="advantages" id="advantages">
+
+    <div class="section">
+
+        <div class="section-title">
+
+            <span>Наши преимущества</span>
+
+            <h2>
+                Комплекс для каждого
+            </h2>
+
+        </div>
+
+
+        <div class="advantages-grid">
+
+            <div class="advantage">
+
+                <div class="advantage-number">
+                    4
+                </div>
+
+                <h3>
+                    Основных направления
+                </h3>
+
+                <p>
+                    Спорт, здоровье, культура
+                    и семейный отдых.
+                </p>
+
+            </div>
+
+
+            <div class="advantage">
+
+                <div class="advantage-number">
+                    365
+                </div>
+
+                <h3>
+                    Дней в году
+                </h3>
+
+                <p>
+                    Возможность заниматься
+                    и отдыхать в любое время.
+                </p>
+
+            </div>
+
+
+            <div class="advantage">
+
+                <div class="advantage-number">
+                    100%
+                </div>
+
+                <h3>
+                    Польза для здоровья
+                </h3>
+
+                <p>
+                    Создаём условия для активной
+                    и полноценной жизни.
+                </p>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- CTA -->
+
+<section class="cta" id="contacts">
+
+    <h2>
+        Приходите к нам!
+    </h2>
+
+    <p>
+        Откройте для себя пространство,
+        где здоровье встречается с культурой.
+    </p>
+
+    <a href="tel:+996000000000" class="btn-primary">
+        Позвонить нам
+    </a>
+
+</section>
+
+
+<!-- FOOTER -->
+
+<footer>
+
+    <div class="footer">
+
+        <div>
+            <h3>
+                Культурно-оздоровительный комплекс
+            </h3>
+
+            <p>
+                Пространство для спорта, культуры,
+                здоровья и отдыха.
+            </p>
+        </div>
+
+
+        <div class="footer-links">
+
+            <a href="#home">Главная</a>
+            <a href="#about">О нас</a>
+            <a href="#services">Услуги</a>
+            <a href="#contacts">Контакты</a>
+
+        </div>
+
+    </div>
+
+
+    <div class="copyright">
+        © 2026 Культурно-оздоровительный комплекс.
+        Все права защищены.
+    </div>
+
+</footer>
+
+</body>
+</html>

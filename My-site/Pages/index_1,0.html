@@ -1,0 +1,1084 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Торговый комплекс «Гранд Плаза»</title>
+
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: Arial, sans-serif;
+            color: #202124;
+            background: #f6f7f9;
+        }
+
+        /* ===== HEADER ===== */
+
+        header {
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+
+            background: white;
+            box-shadow: 0 2px 15px rgba(0,0,0,.08);
+        }
+
+        .header {
+            max-width: 1200px;
+            margin: auto;
+            padding: 16px 25px;
+
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+        }
+
+        .logo {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+
+            color: #7c3aed;
+            font-size: 22px;
+            font-weight: 800;
+        }
+
+        .logo-icon {
+            width: 44px;
+            height: 44px;
+
+            border-radius: 12px;
+            background: #7c3aed;
+            color: white;
+
+            display: flex;
+            align-items: center;
+            justify-content: center;
+
+            font-size: 20px;
+        }
+
+        nav {
+            display: flex;
+            gap: 27px;
+        }
+
+        nav a {
+            text-decoration: none;
+            color: #374151;
+            font-size: 15px;
+            font-weight: 600;
+
+            transition: .3s;
+        }
+
+        nav a:hover {
+            color: #7c3aed;
+        }
+
+        .header-btn {
+            background: #7c3aed;
+            color: white;
+
+            padding: 12px 20px;
+            border-radius: 9px;
+
+            text-decoration: none;
+            font-weight: 700;
+        }
+
+        /* ===== HERO ===== */
+
+        .hero {
+            min-height: 650px;
+
+            background:
+                linear-gradient(
+                    90deg,
+                    rgba(30, 20, 55, .9),
+                    rgba(30, 20, 55, .45)
+                ),
+                url("https://images.unsplash.com/photo-1441986300917-64674bd600d8?auto=format&fit=crop&w=1800&q=80");
+
+            background-size: cover;
+            background-position: center;
+
+            display: flex;
+            align-items: center;
+        }
+
+        .hero-content {
+            max-width: 1200px;
+            width: 100%;
+            margin: auto;
+
+            padding: 80px 25px;
+            color: white;
+        }
+
+        .hero-label {
+            display: inline-block;
+
+            padding: 8px 16px;
+            border-radius: 30px;
+
+            background: rgba(255,255,255,.15);
+            border: 1px solid rgba(255,255,255,.25);
+
+            margin-bottom: 20px;
+        }
+
+        .hero h1 {
+            max-width: 750px;
+
+            font-size: 60px;
+            line-height: 1.08;
+
+            margin-bottom: 25px;
+        }
+
+        .hero h1 span {
+            color: #c4b5fd;
+        }
+
+        .hero p {
+            max-width: 620px;
+
+            color: #e5e7eb;
+            font-size: 19px;
+            line-height: 1.7;
+
+            margin-bottom: 35px;
+        }
+
+        .buttons {
+            display: flex;
+            gap: 15px;
+            flex-wrap: wrap;
+        }
+
+        .btn-primary {
+            display: inline-block;
+
+            padding: 15px 28px;
+            border-radius: 9px;
+
+            background: #8b5cf6;
+            color: white;
+
+            text-decoration: none;
+            font-weight: 700;
+
+            transition: .3s;
+        }
+
+        .btn-primary:hover {
+            background: #7c3aed;
+            transform: translateY(-3px);
+        }
+
+        .btn-light {
+            display: inline-block;
+
+            padding: 15px 28px;
+            border-radius: 9px;
+
+            border: 1px solid rgba(255,255,255,.5);
+            color: white;
+
+            text-decoration: none;
+            font-weight: 700;
+        }
+
+        /* ===== SECTION ===== */
+
+        .section {
+            max-width: 1200px;
+            margin: auto;
+            padding: 90px 25px;
+        }
+
+        .section-title {
+            text-align: center;
+            margin-bottom: 50px;
+        }
+
+        .section-title span {
+            color: #7c3aed;
+
+            font-size: 13px;
+            font-weight: 800;
+
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        .section-title h2 {
+            font-size: 38px;
+            margin-top: 10px;
+        }
+
+        .section-title p {
+            max-width: 650px;
+            margin: 15px auto 0;
+
+            color: #6b7280;
+            line-height: 1.6;
+        }
+
+        /* ===== ABOUT ===== */
+
+        .about {
+            background: white;
+        }
+
+        .about-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+
+            gap: 50px;
+            align-items: center;
+        }
+
+        .about-image {
+            height: 430px;
+
+            border-radius: 25px;
+
+            background:
+                url("https://images.unsplash.com/photo-1555529669-e69e7aa0ba9a?auto=format&fit=crop&w=1000&q=80");
+
+            background-size: cover;
+            background-position: center;
+        }
+
+        .about-text h3 {
+            font-size: 30px;
+            margin-bottom: 20px;
+        }
+
+        .about-text p {
+            color: #6b7280;
+            line-height: 1.8;
+
+            margin-bottom: 20px;
+        }
+
+        .check-list {
+            list-style: none;
+        }
+
+        .check-list li {
+            margin: 15px 0;
+            font-weight: 600;
+        }
+
+        .check-list li::before {
+            content: "✓";
+
+            color: #7c3aed;
+            font-weight: bold;
+
+            margin-right: 10px;
+        }
+
+        /* ===== CATEGORIES ===== */
+
+        .categories {
+            background: #f6f7f9;
+        }
+
+        .cards {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 22px;
+        }
+
+        .card {
+            background: white;
+
+            padding: 30px 25px;
+
+            border-radius: 18px;
+
+            box-shadow: 0 8px 25px rgba(0,0,0,.05);
+
+            transition: .3s;
+        }
+
+        .card:hover {
+            transform: translateY(-8px);
+
+            box-shadow:
+                0 15px 35px rgba(0,0,0,.1);
+        }
+
+        .card-icon {
+            width: 60px;
+            height: 60px;
+
+            border-radius: 16px;
+
+            background: #ede9fe;
+            color: #7c3aed;
+
+            display: flex;
+            align-items: center;
+            justify-content: center;
+
+            font-size: 27px;
+
+            margin-bottom: 20px;
+        }
+
+        .card h3 {
+            font-size: 20px;
+            margin-bottom: 12px;
+        }
+
+        .card p {
+            color: #6b7280;
+            line-height: 1.6;
+            font-size: 15px;
+        }
+
+        /* ===== OFFERS ===== */
+
+        .offers {
+            background: white;
+        }
+
+        .offer-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+
+            gap: 25px;
+        }
+
+        .offer {
+            min-height: 250px;
+
+            padding: 35px;
+
+            border-radius: 22px;
+
+            color: white;
+
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+        }
+
+        .offer:first-child {
+            background:
+                linear-gradient(
+                    120deg,
+                    #7c3aed,
+                    #4f46e5
+                );
+        }
+
+        .offer:last-child {
+            background:
+                linear-gradient(
+                    120deg,
+                    #ec4899,
+                    #be185d
+                );
+        }
+
+        .offer small {
+            text-transform: uppercase;
+            letter-spacing: 1px;
+
+            margin-bottom: 10px;
+
+            opacity: .85;
+        }
+
+        .offer h3 {
+            font-size: 30px;
+            margin-bottom: 12px;
+        }
+
+        .offer p {
+            color: #f3e8ff;
+            line-height: 1.6;
+            margin-bottom: 20px;
+        }
+
+        .offer a {
+            color: white;
+            font-weight: bold;
+            text-decoration: none;
+        }
+
+        /* ===== INFO ===== */
+
+        .info {
+            background: #f6f7f9;
+        }
+
+        .info-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 25px;
+        }
+
+        .info-box {
+            background: white;
+            padding: 30px;
+
+            border-radius: 18px;
+
+            text-align: center;
+        }
+
+        .info-icon {
+            font-size: 35px;
+            margin-bottom: 15px;
+        }
+
+        .info-box h3 {
+            margin-bottom: 10px;
+        }
+
+        .info-box p {
+            color: #6b7280;
+            line-height: 1.6;
+        }
+
+        /* ===== CTA ===== */
+
+        .cta {
+            max-width: 1150px;
+            margin: 70px auto;
+
+            padding: 70px 30px;
+
+            border-radius: 28px;
+
+            text-align: center;
+
+            color: white;
+
+            background:
+                linear-gradient(
+                    120deg,
+                    #7c3aed,
+                    #4f46e5
+                );
+        }
+
+        .cta h2 {
+            font-size: 40px;
+            margin-bottom: 15px;
+        }
+
+        .cta p {
+            color: #e9d5ff;
+            margin-bottom: 30px;
+        }
+
+        /* ===== FOOTER ===== */
+
+        footer {
+            background: #171321;
+            color: white;
+
+            padding: 45px 25px;
+        }
+
+        .footer {
+            max-width: 1200px;
+            margin: auto;
+
+            display: flex;
+            justify-content: space-between;
+
+            gap: 30px;
+        }
+
+        .footer h3 {
+            margin-bottom: 12px;
+        }
+
+        .footer p {
+            color: #9ca3af;
+            line-height: 1.6;
+        }
+
+        .footer-links {
+            display: flex;
+            gap: 20px;
+        }
+
+        .footer-links a {
+            color: #d1d5db;
+            text-decoration: none;
+        }
+
+        .copyright {
+            max-width: 1200px;
+            margin: 35px auto 0;
+
+            padding-top: 25px;
+
+            border-top: 1px solid #302a3c;
+
+            color: #6b7280;
+            font-size: 14px;
+        }
+
+        /* ===== MOBILE ===== */
+
+        @media (max-width: 900px) {
+
+            nav {
+                display: none;
+            }
+
+            .hero h1 {
+                font-size: 45px;
+            }
+
+            .about-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .cards {
+                grid-template-columns: repeat(2, 1fr);
+            }
+
+            .offer-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .info-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        @media (max-width: 600px) {
+
+            .header-btn {
+                display: none;
+            }
+
+            .hero {
+                min-height: 600px;
+            }
+
+            .hero-content {
+                padding: 60px 20px;
+            }
+
+            .hero h1 {
+                font-size: 37px;
+            }
+
+            .hero p {
+                font-size: 16px;
+            }
+
+            .section {
+                padding: 65px 20px;
+            }
+
+            .section-title h2 {
+                font-size: 30px;
+            }
+
+            .cards {
+                grid-template-columns: 1fr;
+            }
+
+            .about-image {
+                height: 300px;
+            }
+
+            .cta {
+                margin: 40px 15px;
+                padding: 50px 20px;
+            }
+
+            .cta h2 {
+                font-size: 30px;
+            }
+
+            .footer {
+                flex-direction: column;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+<!-- HEADER -->
+
+<header>
+
+    <div class="header">
+
+        <div class="logo">
+            <div class="logo-icon">ТК</div>
+            Гранд Плаза
+        </div>
+
+        <nav>
+            <a href="#home">Главная</a>
+            <a href="#about">О комплексе</a>
+            <a href="#shops">Магазины</a>
+            <a href="#offers">Акции</a>
+            <a href="#contacts">Контакты</a>
+        </nav>
+
+        <a href="#contacts" class="header-btn">
+            Контакты
+        </a>
+
+    </div>
+
+</header>
+
+
+<!-- HERO -->
+
+<section class="hero" id="home">
+
+    <div class="hero-content">
+
+        <div class="hero-label">
+            Добро пожаловать в «Гранд Плаза»
+        </div>
+
+        <h1>
+            Всё для покупок,
+            отдыха и развлечений
+        </h1>
+
+        <p>
+            Современный торговый комплекс,
+            где собраны магазины, кафе,
+            развлечения и всё необходимое
+            для комфортного времяпровождения.
+        </p>
+
+        <div class="buttons">
+
+            <a href="#shops" class="btn-primary">
+                Смотреть магазины
+            </a>
+
+            <a href="#about" class="btn-light">
+                О комплексе
+            </a>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- ABOUT -->
+
+<section class="about" id="about">
+
+    <div class="section">
+
+        <div class="about-grid">
+
+            <div class="about-image"></div>
+
+            <div class="about-text">
+
+                <div class="section-title"
+                     style="text-align:left; margin-bottom:25px;">
+
+                    <span>О торговом комплексе</span>
+
+                    <h2>
+                        Всё необходимое
+                        в одном месте
+                    </h2>
+
+                </div>
+
+                <p>
+                    «Гранд Плаза» — современный торговый
+                    комплекс для покупок, отдыха и встреч.
+                </p>
+
+                <p>
+                    На территории комплекса работают
+                    магазины различных категорий,
+                    кафе, зоны отдыха и развлечений.
+                </p>
+
+                <ul class="check-list">
+
+                    <li>
+                        Большой выбор магазинов
+                    </li>
+
+                    <li>
+                        Удобная парковка
+                    </li>
+
+                    <li>
+                        Кафе и рестораны
+                    </li>
+
+                    <li>
+                        Развлечения для всей семьи
+                    </li>
+
+                </ul>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- SHOPS -->
+
+<section class="categories" id="shops">
+
+    <div class="section">
+
+        <div class="section-title">
+
+            <span>Магазины</span>
+
+            <h2>
+                Найдите всё необходимое
+            </h2>
+
+            <p>
+                Разнообразные категории товаров
+                для всей семьи.
+            </p>
+
+        </div>
+
+
+        <div class="cards">
+
+            <div class="card">
+
+                <div class="card-icon">
+                    👕
+                </div>
+
+                <h3>
+                    Одежда
+                </h3>
+
+                <p>
+                    Модная одежда, обувь
+                    и аксессуары.
+                </p>
+
+            </div>
+
+
+            <div class="card">
+
+                <div class="card-icon">
+                    📱
+                </div>
+
+                <h3>
+                    Электроника
+                </h3>
+
+                <p>
+                    Смартфоны, техника,
+                    гаджеты и аксессуары.
+                </p>
+
+            </div>
+
+
+            <div class="card">
+
+                <div class="card-icon">
+                    🛒
+                </div>
+
+                <h3>
+                    Продукты
+                </h3>
+
+                <p>
+                    Продукты питания
+                    и товары для дома.
+                </p>
+
+            </div>
+
+
+            <div class="card">
+
+                <div class="card-icon">
+                    💄
+                </div>
+
+                <h3>
+                    Красота
+                </h3>
+
+                <p>
+                    Косметика, парфюмерия
+                    и товары для ухода.
+                </p>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- OFFERS -->
+
+<section class="offers" id="offers">
+
+    <div class="section">
+
+        <div class="section-title">
+
+            <span>Специальные предложения</span>
+
+            <h2>
+                Акции и события
+            </h2>
+
+        </div>
+
+
+        <div class="offer-grid">
+
+            <div class="offer">
+
+                <small>
+                    Только в этом месяце
+                </small>
+
+                <h3>
+                    Большая распродажа
+                </h3>
+
+                <p>
+                    Скидки до 50% в магазинах
+                    торгового комплекса.
+                </p>
+
+                <a href="#">
+                    Подробнее →
+                </a>
+
+            </div>
+
+
+            <div class="offer">
+
+                <small>
+                    Для всей семьи
+                </small>
+
+                <h3>
+                    Выходные в ТК
+                </h3>
+
+                <p>
+                    Развлекательная программа,
+                    конкурсы и подарки.
+                </p>
+
+                <a href="#">
+                    Узнать больше →
+                </a>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- INFO -->
+
+<section class="info">
+
+    <div class="section">
+
+        <div class="section-title">
+
+            <span>Посетителям</span>
+
+            <h2>
+                Полезная информация
+            </h2>
+
+        </div>
+
+
+        <div class="info-grid">
+
+            <div class="info-box">
+
+                <div class="info-icon">
+                    🕐
+                </div>
+
+                <h3>
+                    Режим работы
+                </h3>
+
+                <p>
+                    Ежедневно<br>
+                    10:00 — 22:00
+                </p>
+
+            </div>
+
+
+            <div class="info-box">
+
+                <div class="info-icon">
+                    🚗
+                </div>
+
+                <h3>
+                    Парковка
+                </h3>
+
+                <p>
+                    Просторная парковка
+                    для посетителей комплекса.
+                </p>
+
+            </div>
+
+
+            <div class="info-box">
+
+                <div class="info-icon">
+                    📍
+                </div>
+
+                <h3>
+                    Как нас найти
+                </h3>
+
+                <p>
+                    г. Бишкек,<br>
+                    проспект Центральный, 10
+                </p>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- CTA -->
+
+<section class="cta" id="contacts">
+
+    <h2>
+        Ждём вас в «Гранд Плаза»!
+    </h2>
+
+    <p>
+        Приходите за покупками, встречами
+        и хорошим настроением.
+    </p>
+
+    <a href="tel:+996000000000"
+       class="btn-primary">
+        Позвонить нам
+    </a>
+
+</section>
+
+
+<!-- FOOTER -->
+
+<footer>
+
+    <div class="footer">
+
+        <div>
+
+            <h3>
+                Торговый комплекс «Гранд Плаза»
+            </h3>
+
+            <p>
+                , отдых и развлечения
+                в одном месте.
+            </p>
+
+        </div>
+
+
+        <div class="footer-links">
+
+            <a href="#home">
+                Главная
+            </a>
+
+            <a href="#shops">
+                Магазины
+            </a>
+
+            <a href="#offers">
+                Акции
+            </a>
+
+            <a href="#contacts">
+                Контакты
+            </a>
+
+        </div>
+
+    </div>
+
+
+    <div class="copyright">
+
+        © 2026 Торговый комплекс «Гранд Плаза».
+        Все права защищены.
+
+    </div>
+
+</footer>
+
+</body>
+</html>

@@ -1,0 +1,800 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>КП-Центр — Развивайся. Учись. Достигай.</title>
+
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: Arial, Helvetica, sans-serif;
+            color: #172033;
+            background: #f7f9fc;
+        }
+
+        /* ===== HEADER ===== */
+
+        header {
+            width: 100%;
+            background: white;
+            box-shadow: 0 2px 15px rgba(0, 0, 0, 0.05);
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+        }
+
+        .header-container {
+            max-width: 1200px;
+            margin: auto;
+            padding: 18px 25px;
+
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+        }
+
+        .logo {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            font-size: 24px;
+            font-weight: 800;
+            color: #2563eb;
+        }
+
+        .logo-icon {
+            width: 42px;
+            height: 42px;
+            border-radius: 12px;
+            background: #2563eb;
+            color: white;
+
+            display: flex;
+            align-items: center;
+            justify-content: center;
+
+            font-size: 20px;
+        }
+
+        nav {
+            display: flex;
+            gap: 30px;
+        }
+
+        nav a {
+            text-decoration: none;
+            color: #172033;
+            font-size: 15px;
+            font-weight: 600;
+            transition: 0.3s;
+        }
+
+        nav a:hover {
+            color: #2563eb;
+        }
+
+        .header-btn {
+            background: #2563eb;
+            color: white;
+            padding: 12px 22px;
+            border-radius: 10px;
+            text-decoration: none;
+            font-weight: 600;
+            transition: 0.3s;
+        }
+
+        .header-btn:hover {
+            background: #1d4ed8;
+            transform: translateY(-2px);
+        }
+
+        /* ===== HERO ===== */
+
+        .hero {
+            min-height: 650px;
+            background:
+                linear-gradient(120deg, rgba(37, 99, 235, 0.95), rgba(79, 70, 229, 0.88)),
+                radial-gradient(circle at top right, #60a5fa, transparent 40%);
+
+            color: white;
+            display: flex;
+            align-items: center;
+        }
+
+        .hero-container {
+            max-width: 1200px;
+            width: 100%;
+            margin: auto;
+            padding: 80px 25px;
+
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 50px;
+        }
+
+        .hero-content {
+            max-width: 650px;
+        }
+
+        .hero-label {
+            display: inline-block;
+            padding: 8px 15px;
+            border-radius: 30px;
+            background: rgba(255,255,255,0.15);
+            border: 1px solid rgba(255,255,255,0.25);
+
+            font-size: 14px;
+            margin-bottom: 20px;
+        }
+
+        .hero h1 {
+            font-size: 58px;
+            line-height: 1.08;
+            margin-bottom: 25px;
+        }
+
+        .hero h1 span {
+            color: #bfdbfe;
+        }
+
+        .hero p {
+            font-size: 19px;
+            line-height: 1.7;
+            color: #e0e7ff;
+            margin-bottom: 35px;
+        }
+
+        .hero-buttons {
+            display: flex;
+            gap: 15px;
+            flex-wrap: wrap;
+        }
+
+        .btn-primary {
+            background: white;
+            color: #2563eb;
+            padding: 15px 28px;
+            border-radius: 10px;
+            text-decoration: none;
+            font-weight: 700;
+            transition: 0.3s;
+        }
+
+        .btn-primary:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 10px 25px rgba(0,0,0,0.15);
+        }
+
+        .btn-secondary {
+            border: 1px solid rgba(255,255,255,0.5);
+            color: white;
+            padding: 15px 28px;
+            border-radius: 10px;
+            text-decoration: none;
+            font-weight: 700;
+            transition: 0.3s;
+        }
+
+        .btn-secondary:hover {
+            background: rgba(255,255,255,0.12);
+        }
+
+        /* ===== HERO CARD ===== */
+
+        .hero-card {
+            width: 350px;
+            min-height: 350px;
+            background: rgba(255,255,255,0.12);
+            border: 1px solid rgba(255,255,255,0.2);
+            backdrop-filter: blur(12px);
+            border-radius: 25px;
+            padding: 30px;
+
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+
+            box-shadow: 0 25px 50px rgba(0,0,0,0.15);
+        }
+
+        .hero-card-icon {
+            width: 70px;
+            height: 70px;
+            background: white;
+            color: #2563eb;
+            border-radius: 20px;
+
+            display: flex;
+            align-items: center;
+            justify-content: center;
+
+            font-size: 32px;
+            margin-bottom: 25px;
+        }
+
+        .hero-card h3 {
+            font-size: 25px;
+            margin-bottom: 15px;
+        }
+
+        .hero-card p {
+            font-size: 15px;
+            color: #e0e7ff;
+            margin: 0;
+        }
+
+        /* ===== ABOUT ===== */
+
+        .section {
+            max-width: 1200px;
+            margin: auto;
+            padding: 90px 25px;
+        }
+
+        .section-title {
+            text-align: center;
+            margin-bottom: 50px;
+        }
+
+        .section-title span {
+            color: #2563eb;
+            font-weight: 700;
+            font-size: 14px;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        .section-title h2 {
+            font-size: 38px;
+            margin-top: 10px;
+        }
+
+        .about-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 40px;
+            align-items: center;
+        }
+
+        .about-text p {
+            color: #64748b;
+            line-height: 1.8;
+            font-size: 16px;
+            margin-bottom: 20px;
+        }
+
+        .about-list {
+            list-style: none;
+        }
+
+        .about-list li {
+            margin-bottom: 15px;
+            font-weight: 600;
+        }
+
+        .about-list li::before {
+            content: "✓";
+            color: #2563eb;
+            font-weight: bold;
+            margin-right: 10px;
+        }
+
+        .about-box {
+            background: white;
+            border-radius: 25px;
+            padding: 40px;
+            box-shadow: 0 15px 40px rgba(15, 23, 42, 0.08);
+        }
+
+        .about-number {
+            font-size: 60px;
+            color: #2563eb;
+            font-weight: 800;
+        }
+
+        .about-box h3 {
+            font-size: 24px;
+            margin-bottom: 10px;
+        }
+
+        .about-box p {
+            color: #64748b;
+            line-height: 1.7;
+        }
+
+        /* ===== DIRECTIONS ===== */
+
+        .directions {
+            background: white;
+        }
+
+        .cards {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 25px;
+        }
+
+        .card {
+            background: #f8fafc;
+            padding: 30px;
+            border-radius: 20px;
+            transition: 0.3s;
+            border: 1px solid #eef2f7;
+        }
+
+        .card:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 15px 30px rgba(15,23,42,0.08);
+        }
+
+        .card-icon {
+            width: 55px;
+            height: 55px;
+            background: #dbeafe;
+            color: #2563eb;
+            border-radius: 15px;
+
+            display: flex;
+            align-items: center;
+            justify-content: center;
+
+            font-size: 24px;
+            margin-bottom: 20px;
+        }
+
+        .card h3 {
+            font-size: 21px;
+            margin-bottom: 12px;
+        }
+
+        .card p {
+            color: #64748b;
+            line-height: 1.6;
+        }
+
+        /* ===== CTA ===== */
+
+        .cta {
+            max-width: 1200px;
+            margin: 70px auto;
+            padding: 70px 40px;
+
+            background: linear-gradient(120deg, #2563eb, #4f46e5);
+            border-radius: 30px;
+
+            text-align: center;
+            color: white;
+        }
+
+        .cta h2 {
+            font-size: 38px;
+            margin-bottom: 15px;
+        }
+
+        .cta p {
+            color: #dbeafe;
+            margin-bottom: 30px;
+            font-size: 17px;
+        }
+
+        /* ===== FOOTER ===== */
+
+        footer {
+            background: #111827;
+            color: white;
+            padding: 35px 25px;
+        }
+
+        .footer-container {
+            max-width: 1200px;
+            margin: auto;
+
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            gap: 20px;
+        }
+
+        .footer-text {
+            color: #9ca3af;
+            font-size: 14px;
+        }
+
+        .social {
+            display: flex;
+            gap: 15px;
+        }
+
+        .social a {
+            color: white;
+            text-decoration: none;
+            opacity: 0.8;
+        }
+
+        .social a:hover {
+            opacity: 1;
+        }
+
+        /* ===== MOBILE ===== */
+
+        @media (max-width: 850px) {
+
+            nav {
+                display: none;
+            }
+
+            .hero-container {
+                flex-direction: column;
+                text-align: center;
+            }
+
+            .hero h1 {
+                font-size: 42px;
+            }
+
+            .hero-buttons {
+                justify-content: center;
+            }
+
+            .hero-card {
+                width: 100%;
+                max-width: 400px;
+            }
+
+            .about-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .cards {
+                grid-template-columns: 1fr;
+            }
+
+            .footer-container {
+                flex-direction: column;
+                text-align: center;
+            }
+        }
+
+        @media (max-width: 500px) {
+
+            .header-btn {
+                display: none;
+            }
+
+            .hero {
+                min-height: auto;
+            }
+
+            .hero-container {
+                padding: 70px 20px;
+            }
+
+            .hero h1 {
+                font-size: 35px;
+            }
+
+            .hero p {
+                font-size: 16px;
+            }
+
+            .section {
+                padding: 65px 20px;
+            }
+
+            .section-title h2 {
+                font-size: 30px;
+            }
+
+            .cta {
+                margin: 40px 15px;
+                padding: 50px 20px;
+            }
+
+            .cta h2 {
+                font-size: 30px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <!-- HEADER -->
+    <header>
+        <div class="header-container">
+
+            <div class="logo">
+                <div class="logo-icon">КП</div>
+                КП-Центр
+            </div>
+
+            <nav>
+                <a href="#home">Главная</a>
+                <a href="#about">О нас</a>
+                <a href="#directions">Направления</a>
+                <a href="#contacts">Контакты</a>
+            </nav>
+
+            <a href="#contacts" class="header-btn">
+                Связаться
+            </a>
+
+        </div>
+    </header>
+
+
+    <!-- HERO -->
+    <main id="home">
+
+        <section class="hero">
+
+            <div class="hero-container">
+
+                <div class="hero-content">
+
+                    <div class="hero-label">
+                        Добро пожаловать в КП-Центр
+                    </div>
+
+                    <h1>
+                        Развивайся.
+                        <span>Учись.</span>
+                        Достигай.
+                    </h1>
+
+                    <p>
+                        Современное пространство для обучения,
+                        развития и достижения новых целей.
+                        Мы помогаем раскрыть потенциал каждого.
+                    </p>
+
+                    <div class="hero-buttons">
+                        <a href="#directions" class="btn-primary">
+                            Наши направления
+                        </a>
+
+                        <a href="#about" class="btn-secondary">
+                            Узнать больше
+                        </a>
+                    </div>
+
+                </div>
+
+
+                <div class="hero-card">
+
+                    <div class="hero-card-icon">
+                        ★
+                    </div>
+
+                    <h3>
+                        Твой путь к успеху
+                    </h3>
+
+                    <p>
+                        Получай новые знания, развивай навыки
+                        и двигайся к своим целям вместе с КП-Центром.
+                    </p>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <!-- ABOUT -->
+        <section class="section" id="about">
+
+            <div class="section-title">
+                <span>О центре</span>
+                <h2>Почему выбирают КП-Центр?</h2>
+            </div>
+
+            <div class="about-grid">
+
+                <div class="about-text">
+
+                    <p>
+                        КП-Центр — это современная площадка,
+                        созданная для образования, развития
+                        и реализации новых возможностей.
+                    </p>
+
+                    <p>
+                        Мы создаём комфортную атмосферу,
+                        где каждый может получить знания,
+                        развить свои навыки и найти новые
+                        перспективы.
+                    </p>
+
+                    <ul class="about-list">
+                        <li>Современный подход к обучению</li>
+                        <li>Опытные специалисты</li>
+                        <li>Комфортная атмосфера</li>
+                        <li>Практические знания и навыки</li>
+                    </ul>
+
+                </div>
+
+
+                <div class="about-box">
+
+                    <div class="about-number">
+                        100+
+                    </div>
+
+                    <h3>
+                        Возможностей для развития
+                    </h3>
+
+                    <p>
+                        Обучение, мероприятия, новые знакомства
+                        и проекты, которые помогают двигаться вперёд.
+                    </p>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <!-- DIRECTIONS -->
+        <section class="directions" id="directions">
+
+            <div class="section">
+
+                <div class="section-title">
+                    <span>Наши возможности</span>
+                    <h2>Основные направления</h2>
+                </div>
+
+
+                <div class="cards">
+
+                    <div class="card">
+
+                        <div class="card-icon">
+                            📚
+                        </div>
+
+                        <h3>
+                            Обучение
+                        </h3>
+
+                        <p>
+                            Получайте новые знания и развивайте
+                            профессиональные навыки.
+                        </p>
+
+                    </div>
+
+
+                    <div class="card">
+
+                        <div class="card-icon">
+                            💡
+                        </div>
+
+                        <h3>
+                            Развитие
+                        </h3>
+
+                        <p>
+                            Развивайте свои способности,
+                            мышление и уверенность в себе.
+                        </p>
+
+                    </div>
+
+
+                    <div class="card">
+
+                        <div class="card-icon">
+                            🚀
+                        </div>
+
+                        <h3>
+                            Проекты
+                        </h3>
+
+                        <p>
+                            Участвуйте в интересных проектах
+                            и реализуйте свои идеи.
+                        </p>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <!-- CTA -->
+        <section class="cta" id="contacts">
+
+            <h2>
+                Готов начать свой путь?
+            </h2>
+
+            <p>
+                Присоединяйся к КП-Центру и развивайся вместе с нами.
+            </p>
+
+            <a href="mailto:info@kp-center.ru" class="btn-primary">
+                Связаться с нами
+            </a>
+
+        </section>
+
+    </main>
+
+
+    <!-- FOOTER -->
+    <footer>
+
+        <div class="footer-container">
+
+            <div class="footer-text">
+                © 2026 КП-Центр. Все права защищены.
+            </div>
+
+            <div class="social">
+                <a href="#">VK</a>
+                <a href="#">Telegram</a>
+                <a href="#">Instagram</a>
+            </div>
+
+        </div>
+
+    </footer>
+
+
+    <script>
+        // Плавное появление карточек при прокрутке
+        const cards = document.querySelectorAll(".card");
+
+        const observer = new IntersectionObserver((entries) => {
+
+            entries.forEach(entry => {
+
+                if (entry.isIntersecting) {
+                    entry.target.style.opacity = "1";
+                    entry.target.style.transform = "translateY(0)";
+                }
+
+            });
+
+        }, {
+            threshold: 0.15
+        });
+
+
+        cards.forEach(card => {
+
+            card.style.opacity = "0";
+            card.style.transform = "translateY(30px)";
+            card.style.transition = "0.6s ease";
+
+            observer.observe(card);
+
+        });
+    </script>
+
+</body>
+</html>
